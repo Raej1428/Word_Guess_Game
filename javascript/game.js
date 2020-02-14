@@ -1,56 +1,54 @@
-var words = ['Simba', 'Mickey', 'Goofy"', 'Woody', 'Stitch'];;
-var allowedGuesses=13;
-var correctGuesses=0;
-var wrongGuesses=0;
-var letterCountElement = document.getElementById('letterCount');
-var lettersGuessedElement = document.getElementById('lettersGuessed');
-var getRandomWord = words[Math.floor(Math.random() * words.length)];
-var getRandomWordElement = document.getElementById('getRandomWord');
+window.onload = function()
+{
 
-function setupGame() {
-    allowedGuesses = [];
-    wrongGuesses = [];
-    correctGuesses = [];
-    // initializes correctGuesses array with underscores
-    for (var i = 0; i < getRandomWord.length; i++) {
-        correctGuesses.push('_');
+var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+var answer = [];
+var guess = []; //user guess
+var letters = []; //correctly guessed letters
+var wrongLetters = []; //incorrectly guessed letters
+var counter = 0; //counts correct letters
+var guesses = 13; //counts users guesses
+
+var wordList = ['Simba', 'Mickey', 'Goofy"', 'Woody', 'Stitch']; //FILL LIST LATER!!
+
+//randomly chooses a word from wordList
+var word = wordList[Math.floor(Math.random() * wordList.length)];
+var guess = document.getElementById("guess");
+var answer = document.getElementById("answer");
+var wrongLetters = document.getElementById("wrongLetters");
+
+//choosen word is replaced with
+function start() {
+    for (i = 0; i < word.length; i++) {
+        letters[i] = "__";
     }
-    getRandomWordElement.innerHTML=correctGuesses.join(' ');
-    letterCountElement.innerHTML=allowedGuesses;
-};
+    document.getElementById("answer").innerHTML = letters.join("");
+}
 
-function updateGuesses(_letter) {
-    allowedGuesses--; //decrements guesses left
-    letterCountElement.innerHTML=allowedGuesses;
+function checkLetter() {
+    document.onkeyup = function (event) {
+        guess = event.key.toUpperCase();
+        var found = false; //Check for a boolean value
 
-    if (getRandomWord.indexOf(_letter) === -1) {//if letter is not in the word
-        wrongGuesses.push(_letter); //updates letters guessed
-        lettersGuessedElement.innerHTML=wrongGuesses.join(', ');
-    } else {//when letter is in the word replace underscore with the letter
-        for (var i = 0; i < getRandomWord.length; i++) {
-            if (getRandomWord[i] === _letter) {
-                correctGuesses[i]=(_letter);
+        for (i = 0; i < word.length; i++) {
+
+            if (guess === word[i]) {
+                letters[i] = guess;
+                document.getElementById("answer").innerHTML = letters.join(" ");
+                found = true;
             }
         }
-        getRandomWordElement.innerHTML=correctGuesses.join(' ');
+        //if found return statement to return the character
+        if (found) return;
+
+        //wrong letters setup
+        else (guess === word[i])
+        {wrongLetters.indexOf(guess) < 1;
+            wrongLetters.push(guess)};
+            document.getElementById("wrongGuesses").innerHTML = wrongLetters.join(" ");
+        }
     }
-};
-
-function checkWin() {
-    if (correctGuesses.indexOf(' ') === -1) {
-        alert('You WIN!!!');
-    } else if (allowedGuesses===0) {
-        alert('You LOSE!!!');
-    }
-};
-
-document.onkeyup = function (event) {
-    var lettersGuessed = String.fromCharCode(event.keyCode).toUpperCase();
-    updateGuesses(lettersGuessed);
-    checkWin();
-};
-
-document.onload = function () {
-    setupGame();
-};
+start();
+checkLetter();
+}
 

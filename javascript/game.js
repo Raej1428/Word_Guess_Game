@@ -1,13 +1,11 @@
 window.onload = function () {
 
-    var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+    //var alphabet = "abcdefghijklmnopqrstuvwxyz".split(" ");
     var answer = [];
     var guess = []; //user guess
     var letters = []; //correctly guessed letters
     var wrongLetters = []; //incorrectly guessed letters
-    var counter = 0; //counts correct letters
-    var guesses = 13; //counts users guesses
-
+    var guessesLeft = 13; //counts users guesses
     var wordList = ["Simba", "Mickey", "Goofy", "Woody", "Stitch"]; //FILL LIST LATER!!
 
     //randomly chooses a word from wordList
@@ -15,41 +13,38 @@ window.onload = function () {
     var guess = document.getElementById("guess");
     var answer = document.getElementById("answer");
     var wrongLetters = document.getElementById("wrongLetters");
+    var guessesLeft = document.getElementById("guesses");
 
     //choosen word is replaced with
     function start() {
         for (i = 0; i < word.length; i++) {
             letters[i] = "__";
         }
-        document.getElementById("answer").innerHTML = letters.join(" ");
-    }
+        document.getElementById("answer").innerHTML = letters.join(' ');
+    };
 
     function checkLetter() {
         document.onkeyup = function (event) {
             guess = event.key.toUpperCase();
-            var found = false; //Check for a boolean value
 
-            for (i = 0; i < word.length; i++) {
+            for (j = 0; j < word.length; j++) {
 
-                if (guess === word[i]) {
-                    letters[i] = guess;
+                if (guess === word[j]) {
+                    letters[j] = guess;
                     found = true;
-                    document.getElementById("answer").innerHTML = letters.join("-");
+                    document.getElementById("answer").innerHTML = answer.join('');
+                }
+                else if (guess === word[j]) {
+                letters[j] = guess;
+                    found = false;
+                    document.getElementById("wrongLetters").innerHTML = wrongLetters.join(', ');
                 }
             }
-            //if found return statement to return the character
-            if (found) return;
-
-            //wrong letters setup
-            else (guess === word[i])
-            {
-                letters[i] = guess;
-                found = false;
-                document.getElementById("wrongLetters").innerHTML = wrongLetters.join(", ");
-            }
-        }
+            guessesLeft--;
+        };
 
     }
+
     start();
     checkLetter();
 }

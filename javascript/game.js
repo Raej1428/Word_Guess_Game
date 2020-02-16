@@ -1,50 +1,51 @@
 window.onload = function () {
 
-    //var alphabet = "abcdefghijklmnopqrstuvwxyz".split(" ");
-    var answer = [];
+    var letters = "abcdefghijklmnopqrstuvwxyz".split(" ");
+    var space = [];
     var guess = []; //user guess
-    var letters = []; //correctly guessed letters
     var wrongLetters = []; //incorrectly guessed letters
-    var guessesLeft = 13; //counts users guesses
+    var guessesLeft = 13; //holds users guesses
     var wordList = ["Simba", "Mickey", "Goofy", "Woody", "Stitch"]; //FILL LIST LATER!!
-
     //randomly chooses a word from wordList
     var word = wordList[Math.floor(Math.random() * wordList.length)];
-    var guess = document.getElementById("guess");
-    var answer = document.getElementById("answer");
+    var space = document.getElementById("space");
     var wrongLetters = document.getElementById("wrongLetters");
-    var guessesLeft = document.getElementById("guesses");
+    var guessesLeft = document.getElementById("You have " + guessesLeft);
+    
 
-    //choosen word is replaced with
     function start() {
         for (i = 0; i < word.length; i++) {
             letters[i] = "__";
+            guessesLeft = 13;
+            guessesLeft--;
         }
-        document.getElementById("answer").innerHTML = letters.join(' ');
+
+        document.getElementById("space").innerHTML = letters.join(" ");
+        document.getElementById("guessesLeft").innerHTML = "You have " + guessesLeft;
+
     };
 
-    function checkLetter() {
-        document.onkeyup = function (event) {
-            guess = event.key.toUpperCase();
+    document.onkeyup = function (event) {
+        letters = event.key.toUpperCase(guess);
+        for (i = 0; i < word.length; i++) {
+            if (letters === word[i]) {
+                letters = guess;
+                document.getElementById("guess").innerHTML = guess.replace([i]);
 
-            for (j = 0; j < word.length; j++) {
-
-                if (guess === word[j]) {
-                    letters[j] = guess;
-                    found = true;
-                    document.getElementById("answer").innerHTML = answer.join('');
-                }
-                else if (guess === word[j]) {
-                letters[j] = guess;
-                    found = false;
-                    document.getElementById("wrongLetters").innerHTML = wrongLetters.join(', ');
-                }
+            } else {
+                guess = wrongLetters
+                document.getElementById("wrongLetters").innerHTML = wrongLetters.join(", ");
             }
-            guessesLeft--;
-        };
 
-    }
+        }
+        
+    };
 
     start();
-    checkLetter();
 }
+
+
+
+
+
+

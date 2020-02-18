@@ -106,7 +106,7 @@ function song() {
 
     else if (randomWord === words[5]) {
         Baymax.play();
-        gonzo.pause();
+        Gonzo.pause();
         Goofy.pause();
         Mickey.pause();
         Simba.pause();

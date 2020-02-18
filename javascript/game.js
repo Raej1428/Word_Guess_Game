@@ -1,5 +1,5 @@
 //variables
-var words = ["Simba", "Mickey", "Goofy", "Woody", "Elsa", "Baymax", "Gonzo"]
+var words = ["SIMBA", "MICKEY", "GOOFY", "WOODY", "ELSA", "BAYMAX", "GONZO"]
 
 //empty variables 
 var randomWord = "";
@@ -54,6 +54,7 @@ function checkLetters(letter) {
                 blanksAndCorrect[i] = letter;
                 letterInWord = false;
             }
+
         }
     }
     //otherwise, push the incorrect guess in the wrong guesses section, and reduce remaining guesses
@@ -85,8 +86,6 @@ function complete() {
     document.getElementById("currentword").innerHTML = "  " + blanksAndCorrect.join(" ");
     document.getElementById("guessesremaining").innerHTML = " " + guessesRemaining;
 }
-//EXCUTING THE CODE
-
 
 //check for keyup, and convert to uppercase then store in guesses
 document.onkeyup = function (event) {
@@ -98,8 +97,6 @@ document.onkeyup = function (event) {
     //store player guess in console for reference 
     console.log(guesses);
 
-    //display/store incorrect letters on screen
-    document.getElementById("playerguesses").innerHTML = "  " + wrongGuess.join(" ");
 }
 
 //RESET FUNCTION
@@ -208,4 +205,3 @@ function audio() {
     }
 };
 
-Game()

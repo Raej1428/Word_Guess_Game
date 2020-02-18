@@ -38,101 +38,96 @@ function Game() {
 
 //Bonus Homework testing
 //variables for audio function
-var simba = document.getElementById("Simba");
-var mickey = document.getElementById("Mickey");
-var goofy = document.getElementById("Goofy");
-var woody = document.getElementById("Woody");
-var elsa = document.getElementById("Elsa");
-var baymax = document.getElementById("Baymax");
-var gonzo = document.getElementById("Gonzo");
+
 
 function song() {
-    //Simba Audio & Image
-    //---------------------------
+    var Simba = document.getElementById("Simba");
+    var Mickey = document.getElementById("Mickey");
+    var Goofy = document.getElementById("Goofy");
+    var Woody = document.getElementById("Woody");
+    var Elsa = document.getElementById("Elsa");
+    var Baymax = document.getElementById("Baymax");
+    var Gonzo = document.getElementById("Gonzo");
+
     if (randomWord === words[0]) {
-        simba.play();
-        woody.pause();
-        elsa.pause();
-        baymax.pause();
-        gonzo.pause();
-        goofy.pause();
-        mickey.pause();
+        Simba.play();
+        Woody.pause();
+        Elsa.pause();
+        Baymax.pause();
+        Gonzo.pause();
+        Goofy.pause();
+        Mickey.pause();
         document.getElementById("image").src = "./assets/simba.png";
     }
-    //mickey Audio & Image
-    //---------------------------
+
     else if (randomWord === words[1]) {
-        mickey.play();
-        woody.pause();
-        elsa.pause();
-        baymax.pause();
-        gonzo.pause();
-        goofy.pause();
-        simba.pause();
+        Mickey.play();
+        Woody.pause();
+        Elsa.pause();
+        Baymax.pause();
+        Gonzo.pause();
+        Goofy.pause();
+        Simba.pause();
         document.getElementById("image").src = "./assets/mickey.jpg";
     }
-    //goofy Audio & Image
-    //---------------------------
+
     else if (randomWord === words[2]) {
-        goofy.play();
-        woody.pause();
-        elsa.pause();
-        baymax.pause();
-        gonzo.pause();
-        mickey.pause();
-        simba.pause();
+        Goofy.play();
+        Woody.pause();
+        Elsa.pause();
+        Baymax.pause();
+        Gonzo.pause();
+        Mickey.pause();
+        Simba.pause();
         document.getElementById("image").src = "./assets/goofy.png";
     }
-    //woody Audio & Image
-    //---------------------------
+
     else if (randomWord === words[3]) {
-        woody.play();
-        elsa.pause();
-        baymax.pause();
-        gonzo.pause();
-        goofy.pause();
-        mickey.pause();
-        simba.pause();
+        Woody.play();
+        Elsa.pause();
+        Baymax.pause();
+        Gonzo.pause();
+        Goofy.pause();
+        Mickey.pause();
+        Simba.pause();
         document.getElementById("image").src = "./assets/woody.png";
     }
-    //baymax Audio & Image
-    //---------------------------
+
     else if (randomWord === words[4]) {
-        elsa.play();
-        baymax.pause();
-        gonzo.pause();
-        goofy.pause();
-        mickey.pause();
-        simba.pause();
-        woody.pause();
-        document.getElementById("image").src = "./assets/baymax.png";
-    }
-    //elsa Audio & Image
-    //---------------------------
-    else if (randomWord === words[5]) {
-        baymax.play();
-        gonzo.pause();
-        goofy.pause();
-        mickey.pause();
-        simba.pause();
-        woody.pause();
-        elsa.pause();
+        Elsa.play();
+        Baymax.pause();
+        Gonzo.pause();
+        Goofy.pause();
+        Mickey.pause();
+        Simba.pause();
+        Woody.pause();
         document.getElementById("image").src = "./assets/elsa.png";
     }
-    //gonzo Audio & Image
-    //---------------------------
+
+    else if (randomWord === words[5]) {
+        Baymax.play();
+        gonzo.pause();
+        Goofy.pause();
+        Mickey.pause();
+        Simba.pause();
+        Woody.pause();
+        Elsa.pause();
+        document.getElementById("image").src = "./assets/baymax.png";
+    }
+
     else if (randomWord === words[6]) {
-        gonzo.play();
-        elsa.pause();
-        baymax.pause();
-        goofy.pause();
-        mickey.pause();
-        simba.pause();
-        woody.pause();
+        Gonzo.play();
+        Elsa.pause();
+        Baymax.pause();
+        Goofy.pause();
+        Mickey.pause();
+        Simba.pause();
+        Woody.pause();
         document.getElementById("image").src = "./assets/gonzo.png";
     }
 
-}
+};
+
 //Check Function to see if won
 function checkLetters(letter) {
     var letterInWord = "";
@@ -184,6 +179,16 @@ function complete() {
     document.getElementById("guessesremaining").innerHTML = " " + guessesRemaining;
 }
 
+//RESET FUNCTION
+function reset() {
+    guessesRemaining = 13;
+    wrongGuess = [];
+    blanksAndCorrect = [];
+    Game()
+}
+
+Game();
+
 //check for keyup, and convert to uppercase then store in guesses
 document.onkeyup = function (event) {
     var guesses = String.fromCharCode(event.keyCode).toUpperCase();
@@ -197,13 +202,7 @@ document.onkeyup = function (event) {
 
 }
 
-//RESET FUNCTION
-function reset() {
-    guessesRemaining = 13;
-    wrongGuess = [];
-    blanksAndCorrect = [];
-    Game()
-}
+
 
 
 

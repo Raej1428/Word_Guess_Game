@@ -1,12 +1,12 @@
 body {
     background-image: url("../images/Disneyheroes.png");
-    width: 900px
+    width: 900px;
     
 }
 
 h1 {
     font-size: 43px;
-    border: solid 5px purple;
+    border: solid 15px purple;
     background: gray;
     text-align: center;
     margin-top: 2%;
@@ -31,15 +31,15 @@ img {
 .sidebar {
     padding: 5px;
     position: relative;
-    border-top: solid teal 2px;
-    border-bottom: solid purple 2px;
+    border-top: solid teal 5px;
+    border-bottom: solid purple 5px;
     margin-bottom: 5px;
     font-family: 'Press Start 2P', cursive;
     font-size: 12px;
 }
 
 span {
-    border: solid teal 2px;
+    border: solid teal 5px;
     padding-left: 3px;
     padding-right:3px;
     background-color: purple; 
@@ -47,18 +47,16 @@ span {
 }
 
 .background {
+    margin: auto;
     background-image: url("../assets/DisneyHeroes3.png");
-    border: solid 5px teal;
+    border: solid 15px teal;
 }
 
 .container {
     background-color: gray;
-    margin-top: 5px;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-bottom: 5px;
+    margin: auto;
     text-align: center;
-    border: solid 3px purple;
+    border: solid 10px purple;
 }
 
 #currentword {

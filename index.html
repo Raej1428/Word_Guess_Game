@@ -1,24 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Word Guess Game - Disney Heroes</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DISNEY HEROES GAME</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <script src="javascript/game.js"></script>
 </head>
 
-<body>
-    <h1>Disney Heroes Word Guess Game!</h1>
+    <body>
+       <div class="heading">
+            <h1>DISNEY HEROES</h1>
+        </div>
 
-<div>
-    
-    <p id="space"></p>
-    <P id ="guess"></P>
-    <p id="guessesLeft"></p>
-    <p id="wrongLetters"></p>
-</div>
+        <div class="background">
+            <div class="container">
 
-</body>
+                <h2>Press Any Key To Guess This Word!</h2>
+                <div>
+                    <img id="image" src="images/arrow.gif" width="40%" height="200">
+                </div>
+
+               
+                <div>
+                    <h3 id="currentWord">_ _ _ _ _</h3>
+                </div>
+                <div id="scoreboard">
+                   
+                    <div class="sidebar">
+                        <h3>GUESSES LEFT:
+                            <span id="guessesremaining"></span>
+                        </h3>
+                    </div>
+
+                 
+                    <div class="sidebar">
+                        <h3>WINS:
+                            <span id="winstracker"></span>
+                        </h3>
+                    </div>
+                    
+                    <div class="sidebar">
+                        <h3>LOSSES:
+                            <span id="losstracker"></span>
+                        </h3>
+                    </div>
+
+                  
+                    <div class="sidebar">
+                        <h3>Wrong guesses:
+                            <span id="playerguesses"></span>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+       
+        <div>
+        
+            <audio id="Simba">
+                <source src="./assets/Simba.m4a" type="audio/m4a">
+            </audio>
+          
+            <audio id="Mickey">
+                <source src="./assets/Mickey.m4a" type="audio/m4a">
+            </audio>
+           
+            <audio id="Goofy">
+                <source src="./assets/Goofy.m4a" type="audio/m4a">
+            </audio>
+           
+            <audio id="Woody">
+                <source src="./assets/Woody.m4a" type="audio/m4a">
+            </audio>
+           
+            <audio id="Elsa">
+                <source src="./assets/Elsa.m4a" type="audio/m4a">
+            </audio>
+            
+            <audio id="Baymax">
+                <source src="./assets/Baymax.m4a" type="audio/m4a">
+            </audio>
+            
+            <audio id="Gonzo">
+                <source src="./assets/Gonzo.m4a" type="audio/m4a">
+            </audio>
+        </div>
+
+
+
+
+       
+
+    </body>
 
 </html>

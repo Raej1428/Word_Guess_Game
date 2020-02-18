@@ -47,19 +47,21 @@ function checkLetters(letter) {
         }
     }
     //if letterInWord (false)
-    //check each letter to see if it matches word
+    if (letterInWord) {
+        //check each letter to see if it matches word
         for (var i = 0; i < blanks; i++) {
             if (randomWord[i] == letter) {
                 blanksAndCorrect[i] = letter;
                 letterInWord = false;
             }
-        //otherwise, push the incorrect guess in the wrong guesses section, and reduce remaining guesses
+        }
+    }
+    //otherwise, push the incorrect guess in the wrong guesses section, and reduce remaining guesses
     else {
         wrongGuess.push(letter);
         guessesRemaining--;
     }
     console.log(blanksAndCorrect);
-}
 }
 
 function complete() {

@@ -5,13 +5,12 @@ body {
 }
 
 h1 {
+    float: none;
+    margin: 0 auto;
     font-size: 43px;
     border: solid 15px purple;
     background: gray;
     text-align: center;
-    margin-top: 2%;
-    margin-left: 10%;
-    margin-right:10%;
     padding: 15px;
     font-family: 'Faster One', cursive;
 }
@@ -47,14 +46,18 @@ span {
 }
 
 .background {
-    margin: auto;
+    float: none;
+    margin: 125px 500px;
+    padding: 100px 100px;
     background-image: url("../assets/DisneyHeroes3.png");
     border: solid 15px teal;
 }
 
 .container {
-    background-color: gray;
+    float: none;
     margin: auto;
+    padding: auto;
+    background-color: gray;
     text-align: center;
     border: solid 10px purple;
 }

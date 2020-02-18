@@ -27,8 +27,7 @@ function Game() {
     //creating a loop to generate "_" for each letter in array stored in blanks
     for (var i = 0; i < blanks; i++) {
         blanksAndCorrect.push("_");
-        //showing the "_" within HTML
-        // document.getElementById("currentword").innerHTML = "  " + blanksAndCorrect.join("  ");
+
     }
     //console logging 
     console.log(randomWord);
@@ -37,6 +36,103 @@ function Game() {
     console.log(blanksAndCorrect)
 }
 
+//Bonus Homework testing
+//variables for audio function
+var simba = document.getElementById("Simba");
+var mickey = document.getElementById("Mickey");
+var goofy = document.getElementById("Goofy");
+var woody = document.getElementById("Woody");
+var elsa = document.getElementById("Elsa");
+var baymax = document.getElementById("Baymax");
+var gonzo = document.getElementById("Gonzo");
+
+function song() {
+    //Simba Audio & Image
+    //---------------------------
+    if (randomWord === words[0]) {
+        simba.play();
+        woody.pause();
+        elsa.pause();
+        baymax.pause();
+        gonzo.pause();
+        goofy.pause();
+        mickey.pause();
+        document.getElementById("image").src = "./assets/simba.png";
+    }
+    //mickey Audio & Image
+    //---------------------------
+    else if (randomWord === words[1]) {
+        mickey.play();
+        woody.pause();
+        elsa.pause();
+        baymax.pause();
+        gonzo.pause();
+        goofy.pause();
+        simba.pause();
+        document.getElementById("image").src = "./assets/mickey.jpg";
+    }
+    //goofy Audio & Image
+    //---------------------------
+    else if (randomWord === words[2]) {
+        goofy.play();
+        woody.pause();
+        elsa.pause();
+        baymax.pause();
+        gonzo.pause();
+        mickey.pause();
+        simba.pause();
+        document.getElementById("image").src = "./assets/goofy.png";
+    }
+    //woody Audio & Image
+    //---------------------------
+    else if (randomWord === words[3]) {
+        woody.play();
+        elsa.pause();
+        baymax.pause();
+        gonzo.pause();
+        goofy.pause();
+        mickey.pause();
+        simba.pause();
+        document.getElementById("image").src = "./assets/woody.png";
+    }
+    //baymax Audio & Image
+    //---------------------------
+    else if (randomWord === words[4]) {
+        elsa.play();
+        baymax.pause();
+        gonzo.pause();
+        goofy.pause();
+        mickey.pause();
+        simba.pause();
+        woody.pause();
+        document.getElementById("image").src = "./assets/baymax.png";
+    }
+    //elsa Audio & Image
+    //---------------------------
+    else if (randomWord === words[5]) {
+        baymax.play();
+        gonzo.pause();
+        goofy.pause();
+        mickey.pause();
+        simba.pause();
+        woody.pause();
+        elsa.pause();
+        document.getElementById("image").src = "./assets/elsa.png";
+    }
+    //gonzo Audio & Image
+    //---------------------------
+    else if (randomWord === words[6]) {
+        gonzo.play();
+        elsa.pause();
+        baymax.pause();
+        goofy.pause();
+        mickey.pause();
+        simba.pause();
+        woody.pause();
+        document.getElementById("image").src = "./assets/gonzo.png";
+    }
+
+}
 //Check Function to see if won
 function checkLetters(letter) {
     var letterInWord = "";
@@ -70,9 +166,10 @@ function complete() {
     //if WON...then alert, play audio, display image and reset new round
     if (lettersOfWord.toString() == blanksAndCorrect.toString()) {
         wins++;
-        audio()
+        song()
         reset()
         //display wins on screen
+        alert("YOU WON!!!")
         document.getElementById("winstracker").innerHTML = " " + wins;
 
         //if LOST...then alert and reset new round
@@ -96,6 +193,7 @@ document.onkeyup = function (event) {
     complete();
     //store player guess in console for reference 
     console.log(guesses);
+    document.getElementById("playerguesses").innerHTML = "  " + wrongGuess.join(" ");
 
 }
 
@@ -107,101 +205,5 @@ function reset() {
     Game()
 }
 
-//Bonus Homework testing
-//variables for audio function
-var simba = document.getElementById("Simba");
-var mickey = document.getElementById("Mickey");
-var goofy = document.getElementById("Goofy");
-var woody = document.getElementById("Woody");
-var elsa = document.getElementById("Elsa");
-var baymax = document.getElementById("Baymax");
-var gonzo = document.getElementById("Gonzo");
 
-
-function audio() {
-    //Simba Audio & Image
-    //---------------------------
-    if (randomWord === words[0]) {
-        woody.pause();
-        elsa.pause();
-        baymax.pause();
-        gonzo.pause();
-        goofy.pause();
-        mickey.pause();
-        simba.play();
-        document.getElementById("image").src = "./assets/simba.png";
-    }
-    //mickey Audio & Image
-    //---------------------------
-    else if (randomWord === words[1]) {
-        woody.pause();
-        elsa.pause();
-        baymax.pause();
-        gonzo.pause();
-        goofy.pause();
-        simba.pause();
-        mickey.play();
-        document.getElementById("image").src = "./assets/mickey.jpg";
-    }
-    //goofy Audio & Image
-    //---------------------------
-    else if (randomWord === words[2]) {
-        woody.pause();
-        elsa.pause();
-        baymax.pause();
-        gonzo.pause();
-        mickey.pause();
-        simba.pause();
-        goofy.play();
-        document.getElementById("image").src = "./assets/goofy.png";
-    }
-    //woody Audio & Image
-    //---------------------------
-    else if (randomWord === words[3]) {
-        elsa.pause();
-        baymax.pause();
-        gonzo.pause();
-        goofy.pause();
-        mickey.pause();
-        simba.pause();
-        woody.play();
-        document.getElementById("image").src = "./assets/woody.png";
-    }
-    //baymax Audio & Image
-    //---------------------------
-    else if (randomWord === words[4]) {
-        baymax.pause();
-        gonzo.pause();
-        goofy.pause();
-        mickey.pause();
-        simba.pause();
-        woody.pause();
-        elsa.play();
-        document.getElementById("image").src = "./assets/baymax.png";
-    }
-    //elsa Audio & Image
-    //---------------------------
-    else if (randomWord === words[5]) {
-        elsa.pause();
-        gonzo.pause();
-        goofy.pause();
-        mickey.pause();
-        simba.pause();
-        woody.pause();
-        baymax.play();
-        document.getElementById("image").src = "./assets/elsa.png";
-    }
-    //gonzo Audio & Image
-    //---------------------------
-    else if (randomWord === words[6]) {
-        elsa.pause();
-        baymax.pause();
-        goofy.pause();
-        mickey.pause();
-        simba.pause();
-        woody.pause();
-        gonzo.play();
-        document.getElementById("image").src = "./assets/gonzo.png";
-    }
-};
 

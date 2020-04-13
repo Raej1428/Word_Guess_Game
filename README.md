@@ -1,6 +1,5 @@
 # Word_Guess_Game
 
-
 <h1>Disney Heroes Word Guess Game!</h1>
 
 To Start the game:
@@ -13,3 +12,4 @@ To Start the game:
 Goooooooooood luck and have fun playing!
 
 <img src="images/hangman.png"> 
+<a href="https://raej1428.github.io/Word_Guess_Game/" target="_blank" class="btn btn-dark">Heroes Unite</a>

@@ -1,7 +1,7 @@
 # Word_Guess_Game
 
 
-This is a Disney Heroes themed word guessing game. 
+<h1>Disney Heroes Word Guess Game!</h1>
 
 To Start the game:
 
@@ -11,3 +11,5 @@ To Start the game:
 4. You have an unlimited number of times you can play the game; it will keep track of your wins and losses.
 
 Goooooooooood luck and have fun playing!
+
+<img href="images/hangman.png"> 

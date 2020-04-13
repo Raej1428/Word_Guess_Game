@@ -12,4 +12,4 @@ To Start the game:
 
 Goooooooooood luck and have fun playing!
 
-<img href="images/hangman.png"> 
+<img src="images/hangman.png"> 

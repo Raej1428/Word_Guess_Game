@@ -11,5 +11,5 @@ To Start the game:
 
 Goooooooooood luck and have fun playing!
 
-<img src="images/hangman.png"> 
-<a href="https://raej1428.github.io/Word_Guess_Game/" target="_blank" class="btn btn-dark">Heroes Unite</a>
+<a href="https://raej1428.github.io/Word_Guess_Game/" target="_blank" class="btn btn-dark">Heroes Unite <img src="images/hangman.png"> </a>
+
